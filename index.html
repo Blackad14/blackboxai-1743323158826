@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Netflix Clone</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="flex justify-between items-center px-4 py-3 fixed w-full z-50 bg-gradient-to-b from-black to-transparent">
+        <div class="flex items-center">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/0/08/Netflix_2015_logo.svg" alt="Netflix Logo" class="h-8">
+        </div>
+        <div class="flex items-center space-x-4">
+            <button class="text-white hover:text-gray-300">
+                <i class="fas fa-search"></i>
+            </button>
+            <button class="text-white hover:text-gray-300">
+                <i class="fas fa-bell"></i>
+            </button>
+            <div class="w-8 h-8 rounded bg-gray-500"></div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="relative h-screen flex items-center px-10 hero-bg bg-gradient-to-r from-black via-transparent to-black">
+        <div class="absolute inset-0 bg-black opacity-50"></div>
+        <div class="relative z-10 max-w-2xl">
+            <h1 class="text-5xl font-bold mb-4">Unlimited movies, TV shows, and more.</h1>
+            <p class="text-xl mb-6">Watch anywhere. Cancel anytime.</p>
+            <div class="flex space-x-4">
+                <button class="netflix-red text-white px-6 py-3 rounded font-semibold hover:bg-red-700 transition">
+                    Get Started
+                </button>
+                <button class="bg-white text-black px-6 py-3 rounded font-semibold hover:bg-gray-200 transition">
+                    Learn More
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Content Sections -->
+    <section class="py-12 px-10">
+        <h2 class="text-2xl font-bold mb-6">Popular on Netflix</h2>
+        <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-4">
+            <!-- Content cards will be dynamically loaded here -->
+            <div class="relative group">
+                <div class="h-40 bg-gray-800 rounded overflow-hidden content-card">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black to-transparent opacity-0 group-hover:opacity-100 transition"></div>
+                </div>
+                <p class="mt-2 text-sm truncate">Movie Title</p>
+            </div>
+            <!-- Repeat for other content items -->
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-black text-gray-500 py-12 px-10">
+        <div class="max-w-6xl mx-auto">
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
+                <div>
+                    <h3 class="text-white mb-4">Company</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="hover:text-white">About Us</a></li>
+                        <li><a href="#" class="hover:text-white">Jobs</a></li>
+                        <li><a href="#" class="hover:text-white">Contact</a></li>
+                    </ul>
+                </div>
+                <!-- Repeat for other footer columns -->
+            </div>
+            <div class="mt-8 pt-8 border-t border-gray-800">
+                <p>&copy; 2023 Netflix Clone. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="scripts.js"></script>
+</body>
+</html>
