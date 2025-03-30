@@ -1,33 +1,156 @@
 /* Custom styles for Netflix clone */
+:root {
+    --neon-red: #ff0a16;
+    --neon-blue: #00f0ff;
+    --neon-purple: #9d00ff;
+    --dark-bg: #0a0a0a;
+    --card-bg: #1a1a1a;
+}
+
+/* Futuristic Netflix red with glow */
 .netflix-red {
-    background-color: #e50914;
+    background-color: var(--neon-red);
+    box-shadow: 0 0 10px var(--neon-red), 
+                0 0 20px rgba(229, 9, 20, 0.5);
+    transition: all 0.3s ease;
 }
 
 .netflix-red:hover {
-    background-color: #f40612;
+    background-color: #ff0a16;
+    box-shadow: 0 0 15px var(--neon-red), 
+                0 0 30px rgba(229, 9, 20, 0.7);
+    transform: translateY(-2px);
 }
 
-/* Hero section background */
+/* Futuristic hero section with parallax and glow */
 .hero-bg {
     background-image: url('https://assets.nflxext.com/ffe/siteui/vlv3/5e16108c-fd30-46de-9bb8-0b4e1bbbc509/29d8d7d7-83cc-4b5f-aa9b-6fd4f68bfaa6/IN-en-20240205-popsignuptwoweeks-perspective_alpha_website_large.jpg');
     background-size: cover;
     background-position: center;
+    background-attachment: fixed;
+    position: relative;
+    overflow: hidden;
 }
 
-/* Content card hover effect */
+.hero-bg::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(
+        to right,
+        rgba(10, 10, 10, 0.9) 0%,
+        rgba(10, 10, 10, 0.7) 50%,
+        rgba(10, 10, 10, 0.9) 100%
+    );
+    z-index: 1;
+}
+
+/* 3D content cards with neon glow */
 .content-card {
-    transition: transform 0.3s ease;
+    transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+    transform-style: preserve-3d;
+    perspective: 1000px;
+    background-color: var(--card-bg);
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 
+                0 1px 2px rgba(0, 0, 0, 0.24);
 }
 
 .content-card:hover {
-    transform: scale(1.05);
+    transform: scale(1.05) rotateY(5deg) rotateX(5deg);
+    box-shadow: 0 0 15px var(--neon-purple),
+                0 10px 25px rgba(0, 0, 0, 0.3);
+    z-index: 10;
 }
 
-/* Navigation bar */
+/* Futuristic navigation with glass morphism */
 .navbar {
-    transition: background-color 0.3s ease;
+    transition: all 0.4s ease;
+    background: rgba(20, 20, 20, 0.7);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    box-shadow: 0 2px 20px rgba(0, 0, 0, 0.3);
 }
 
-.scrolled {
-    background-color: #141414 !important;
+.navbar.scrolled {
+    background: rgba(10, 10, 10, 0.95);
+}
+
+/* Neon icon effects */
+.nav-icon {
+    transition: all 0.3s ease;
+}
+
+.nav-icon:hover {
+    filter: drop-shadow(0 0 5px var(--neon-blue));
+    transform: scale(1.1);
+}
+
+/* Futuristic text effects */
+.futuristic-text {
+    text-shadow: 0 0 5px rgba(255, 255, 255, 0.3),
+                 0 0 10px rgba(255, 255, 255, 0.2);
+}
+
+/* Pulsing animation for featured content */
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.03); }
+    100% { transform: scale(1); }
+}
+
+.featured {
+    animation: pulse 3s infinite ease-in-out;
+}
+
+/* Dark mode toggle styles */
+.dark-mode-toggle {
+    position: relative;
+    width: 50px;
+    height: 24px;
+    background: var(--card-bg);
+    border-radius: 12px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.dark-mode-toggle:hover {
+    box-shadow: 0 0 10px var(--neon-blue);
+}
+
+.dark-mode-toggle::after {
+    content: '';
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background: var(--neon-red);
+    border-radius: 50%;
+    top: 2px;
+    left: 2px;
+    transition: all 0.3s ease;
+}
+
+.dark-mode-toggle.active::after {
+    transform: translateX(26px);
+    background: var(--neon-blue);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .hero-bg {
+        background-attachment: scroll;
+    }
+    
+    .content-card:hover {
+        transform: scale(1.03);
+    }
+    
+    .navbar {
+        backdrop-filter: none;
+        -webkit-backdrop-filter: none;
+    }
 }
