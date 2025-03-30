@@ -13,51 +13,71 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <!-- Navigation Bar -->
-    <nav class="flex justify-between items-center px-4 py-3 fixed w-full z-50 bg-gradient-to-b from-black to-transparent">
+    <!-- Futuristic Navigation Bar with Glass Morphism -->
+    <nav class="navbar flex justify-between items-center px-6 py-4 fixed w-full z-50">
         <div class="flex items-center">
             <img src="https://upload.wikimedia.org/wikipedia/commons/0/08/Netflix_2015_logo.svg" alt="Netflix Logo" class="h-8">
         </div>
-        <div class="flex items-center space-x-4">
-            <button class="text-white hover:text-gray-300">
+        <div class="flex items-center space-x-6">
+            <button class="nav-icon text-white text-xl">
                 <i class="fas fa-search"></i>
             </button>
-            <button class="text-white hover:text-gray-300">
+            <button class="nav-icon text-white text-xl">
                 <i class="fas fa-bell"></i>
             </button>
-            <div class="w-8 h-8 rounded bg-gray-500"></div>
+            <div class="dark-mode-toggle ml-4"></div>
+            <div class="w-8 h-8 rounded-full bg-gradient-to-r from-red-500 to-purple-600"></div>
         </div>
     </nav>
 
-    <!-- Hero Section -->
-    <section class="relative h-screen flex items-center px-10 hero-bg bg-gradient-to-r from-black via-transparent to-black">
-        <div class="absolute inset-0 bg-black opacity-50"></div>
+    <!-- Futuristic Hero Section with Parallax -->
+    <section class="relative h-screen flex items-center px-10 hero-bg">
         <div class="relative z-10 max-w-2xl">
-            <h1 class="text-5xl font-bold mb-4">Unlimited movies, TV shows, and more.</h1>
-            <p class="text-xl mb-6">Watch anywhere. Cancel anytime.</p>
+            <h1 class="futuristic-text text-5xl md:text-6xl font-bold mb-4 text-white">Unlimited movies, TV shows, and more.</h1>
+            <p class="futuristic-text text-xl md:text-2xl mb-8 text-gray-200">Watch anywhere. Cancel anytime.</p>
             <div class="flex space-x-4">
-                <button class="netflix-red text-white px-6 py-3 rounded font-semibold hover:bg-red-700 transition">
-                    Get Started
+                <button class="netflix-red text-white px-8 py-4 rounded-lg font-bold text-lg">
+                    Get Started <i class="fas fa-arrow-right ml-2"></i>
                 </button>
-                <button class="bg-white text-black px-6 py-3 rounded font-semibold hover:bg-gray-200 transition">
-                    Learn More
+                <button class="bg-white bg-opacity-90 text-black px-8 py-4 rounded-lg font-bold text-lg hover:bg-opacity-100 transition-all">
+                    Learn More <i class="fas fa-info-circle ml-2"></i>
                 </button>
             </div>
         </div>
     </section>
 
-    <!-- Content Sections -->
-    <section class="py-12 px-10">
-        <h2 class="text-2xl font-bold mb-6">Popular on Netflix</h2>
-        <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-4">
-            <!-- Content cards will be dynamically loaded here -->
-            <div class="relative group">
-                <div class="h-40 bg-gray-800 rounded overflow-hidden content-card">
-                    <div class="absolute inset-0 bg-gradient-to-t from-black to-transparent opacity-0 group-hover:opacity-100 transition"></div>
+    <!-- 3D Content Sections -->
+    <section class="py-16 px-10 bg-black">
+        <h2 class="futuristic-text text-3xl font-bold mb-8 text-white">Trending Now</h2>
+        <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-6">
+            <!-- Featured Content Card -->
+            <div class="relative featured">
+                <div class="h-48 bg-gradient-to-br from-purple-900 to-red-900 rounded-xl overflow-hidden content-card">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black to-transparent opacity-80"></div>
+                    <div class="absolute bottom-4 left-4 right-4">
+                        <p class="text-white font-semibold">Stranger Things</p>
+                        <div class="flex items-center mt-1">
+                            <span class="text-xs text-red-400">98% Match</span>
+                            <span class="mx-2 text-gray-400">|</span>
+                            <span class="text-xs text-gray-400">4 Seasons</span>
+                        </div>
+                    </div>
                 </div>
-                <p class="mt-2 text-sm truncate">Movie Title</p>
             </div>
             <!-- Repeat for other content items -->
+            <div class="relative">
+                <div class="h-48 bg-gradient-to-br from-blue-900 to-teal-900 rounded-xl overflow-hidden content-card">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black to-transparent opacity-80"></div>
+                    <div class="absolute bottom-4 left-4 right-4">
+                        <p class="text-white font-semibold">The Witcher</p>
+                        <div class="flex items-center mt-1">
+                            <span class="text-xs text-red-400">91% Match</span>
+                            <span class="mx-2 text-gray-400">|</span>
+                            <span class="text-xs text-gray-400">3 Seasons</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </section>
 
